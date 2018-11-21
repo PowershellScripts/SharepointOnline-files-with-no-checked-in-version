@@ -42,7 +42,6 @@ param (
 		  "</And></Where></Query></View>"
        
 
-    
         Write-Host $spqQuery.ViewXml
         $partialItems=$ll.GetItems($spqQuery)
         $ctx.Load($partialItems)
@@ -54,14 +53,12 @@ param (
         }
     }
   }
-
   else
   {
     $itemki=$ll.GetItems($spqQuery)
     $ctx.Load($itemki)
     $ctx.ExecuteQuery()
   }
-
 
 
   foreach($item in $itemki)
