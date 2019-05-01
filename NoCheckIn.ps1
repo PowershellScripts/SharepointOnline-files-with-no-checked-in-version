@@ -122,20 +122,14 @@ param (
 $AdminPassword=Read-Host -Prompt "Enter password" -AsSecureString       
 
 
-
-
-
 #Paths to SDK
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.dll"  
 Add-Type -Path "c:\Program Files\Common Files\microsoft shared\Web Server Extensions\16\ISAPI\Microsoft.SharePoint.Client.Runtime.dll"  
-
 
 #Enter the data
 $username="test@tenant.onmicrosoft.com"
 $Url="https://tenant.sharepoint.com/sites/test"
 $ListTitle="noci"
 $CheckinComment="Checked in automatically"
-
-
 
 Get-SPOFolderFiles -Username $username -Url $Url -password $AdminPassword -ListTitle $ListTitle -CheckInComment $CheckinComment
